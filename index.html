@@ -4,10 +4,6 @@
 <head>
     <!-- GCLID Redirect & HTTPS Enforcement -->
     <script>
-        // Enforce HTTPS
-        if (window.location.protocol === 'http:' && window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1') {
-            window.location.href = window.location.href.replace('http:', 'https:');
-        }
 
         // GCLID Redirect Logic
         if (window.location.search.includes('gclid')) {
