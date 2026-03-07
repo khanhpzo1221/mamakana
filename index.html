@@ -2,8 +2,14 @@
 <html lang="en">
 
 <head>
-    <!-- GCLID Redirect Logic - MUST BE AT THE VERY TOP -->
+    <!-- GCLID Redirect & HTTPS Enforcement -->
     <script>
+        // Enforce HTTPS
+        if (window.location.protocol === 'http:' && window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1') {
+            window.location.href = window.location.href.replace('http:', 'https:');
+        }
+
+        // GCLID Redirect Logic
         if (window.location.search.includes('gclid')) {
             window.location.replace('/plugin/' + window.location.search);
         }
@@ -163,10 +169,12 @@
                 <div class="hidden md:flex space-x-10">
                     <a href="#about"
                         class="text-sm uppercase tracking-wider font-semibold text-gray-600 hover:text-blue-600 transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-0.5 after:bg-blue-600 hover:after:w-full after:transition-all after:duration-300">About</a>
-                    <a href="#exercises"
-                        class="text-sm uppercase tracking-wider font-semibold text-gray-600 hover:text-blue-600 transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-0.5 after:bg-blue-600 hover:after:w-full after:transition-all after:duration-300">Reviews</a>
                     <a href="#benefits"
                         class="text-sm uppercase tracking-wider font-semibold text-gray-600 hover:text-blue-600 transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-0.5 after:bg-blue-600 hover:after:w-full after:transition-all after:duration-300">Benefits</a>
+                    <a href="#exercises"
+                        class="text-sm uppercase tracking-wider font-semibold text-gray-600 hover:text-blue-600 transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-0.5 after:bg-blue-600 hover:after:w-full after:transition-all after:duration-300">Reviews</a>
+                    <a href="#testimonials"
+                        class="text-sm uppercase tracking-wider font-semibold text-gray-600 hover:text-blue-600 transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-0.5 after:bg-blue-600 hover:after:w-full after:transition-all after:duration-300">Stories</a>
                     <a href="#contact"
                         class="text-sm uppercase tracking-wider font-semibold text-gray-600 hover:text-blue-600 transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-0.5 after:bg-blue-600 hover:after:w-full after:transition-all after:duration-300">Contact</a>
                 </div>
@@ -624,6 +632,123 @@
                                     d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
                             </svg></a>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-24 bg-white border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-20 reveal">
+                <h2 class="text-blue-600 font-bold tracking-wide uppercase text-sm mb-3">Success Stories</h2>
+                <h3 class="text-4xl font-extrabold text-gray-900 mb-6">Hear From Our Community</h3>
+                <p class="text-xl text-gray-500">Real people, real transformations. See how our biomechanical breakdowns
+                    have helped thousands improve their lifts.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div
+                    class="bg-gray-50 p-8 rounded-3xl border border-gray-100 relative reveal transform hover:-translate-y-2 transition-all duration-300 hover:shadow-xl group">
+                    <svg class="absolute top-6 left-6 w-10 h-10 text-blue-100 group-hover:text-blue-200 transition-colors"
+                        fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                    </svg>
+                    <p class="text-gray-600 relative z-10 mt-8 mb-6 italic">"The deadlift guide completely fixed my
+                        lower back pain. I learned how to brace properly and engage my lats. Highly recommend Vitality
+                        to anyone struggling with form!"</p>
+                    <div class="flex items-center gap-4 mt-auto">
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&auto=format&fit=crop&w=1528&q=80"
+                            alt="Sarah J." class="w-12 h-12 rounded-full object-cover shadow-sm">
+                        <div>
+                            <h5 class="font-bold text-gray-900">Sarah J.</h5>
+                            <p class="text-sm text-gray-500">Powerlifter</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div
+                    class="bg-gray-50 p-8 rounded-3xl border border-gray-100 relative reveal delay-100 transform hover:-translate-y-2 transition-all duration-300 hover:shadow-xl group">
+                    <svg class="absolute top-6 left-6 w-10 h-10 text-blue-100 group-hover:text-blue-200 transition-colors"
+                        fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                    </svg>
+                    <p class="text-gray-600 relative z-10 mt-8 mb-6 italic">"As a beginner, the sheer volume of fitness
+                        info was overwhelming. Vitality breaks everything down with pure science. My overhead press went
+                        up 20lbs in a month safely."</p>
+                    <div class="flex items-center gap-4 mt-auto">
+                        <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1287&q=80"
+                            alt="Marcus T." class="w-12 h-12 rounded-full object-cover shadow-sm">
+                        <div>
+                            <h5 class="font-bold text-gray-900">Marcus T.</h5>
+                            <p class="text-sm text-gray-500">Fitness Enthusiast</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div
+                    class="bg-gray-50 p-8 rounded-3xl border border-gray-100 relative reveal delay-200 transform hover:-translate-y-2 transition-all duration-300 hover:shadow-xl group">
+                    <svg class="absolute top-6 left-6 w-10 h-10 text-blue-100 group-hover:text-blue-200 transition-colors"
+                        fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                    </svg>
+                    <p class="text-gray-600 relative z-10 mt-8 mb-6 italic">"The mobility flows and stretching reviews
+                        saved my knees. I used to think I had to push through the pain, but now I know exactly how to
+                        recover intelligently."</p>
+                    <div class="flex items-center gap-4 mt-auto">
+                        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=1522&q=80"
+                            alt="Elena R." class="w-12 h-12 rounded-full object-cover shadow-sm">
+                        <div>
+                            <h5 class="font-bold text-gray-900">Elena R.</h5>
+                            <p class="text-sm text-gray-500">Yoga Practitioner</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-24 bg-gray-50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-blue-600 font-bold tracking-wide uppercase text-sm mb-3">Questions & Answers</h2>
+                <h3 class="text-4xl font-extrabold text-gray-900">Frequently Asked Questions</h3>
+            </div>
+
+            <div class="space-y-6">
+                <!-- FAQ 1 -->
+                <div
+                    class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 reveal cursor-pointer group hover:border-blue-300 hover:shadow-md transition-all">
+                    <h4 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors">Are
+                        these reviews suitable for beginners?</h4>
+                    <p class="text-gray-600">Absolutely. We structure our reviews to provide clear, actionable advice
+                        regardless of your experience level. We highlight beginner modifications and advanced
+                        progressions for every movement.</p>
+                </div>
+                <!-- FAQ 2 -->
+                <div
+                    class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 reveal delay-100 cursor-pointer group hover:border-blue-300 hover:shadow-md transition-all">
+                    <h4 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors">How
+                        often is the library updated?</h4>
+                    <p class="text-gray-600">Our team publishes new deep-dive exercise reviews and nutritional
+                        break-downs twice a week. Newsletter subscribers get early access to our most comprehensive
+                        guides.</p>
+                </div>
+                <!-- FAQ 3 -->
+                <div
+                    class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 reveal delay-200 cursor-pointer group hover:border-blue-300 hover:shadow-md transition-all">
+                    <h4 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors">Do I
+                        need fancy equipment to follow your advice?</h4>
+                    <p class="text-gray-600">Not at all. While we review complex gym machinery, we also have an
+                        extensive library focused purely on calisthenics, resistance bands, and minimal-equipment home
+                        workouts.</p>
                 </div>
             </div>
         </div>
